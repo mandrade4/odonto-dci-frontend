@@ -1,0 +1,45 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  background: var(--background);
+  box-shadow: var(--shadow-xs);
+}
+
+.control:focus-within {
+  border-color: var(--primary);
+  outline: 2px solid color-mix(in srgb, var(--primary) 30%, transparent);
+  outline-offset: 0;
+}
+
+.input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.input::placeholder {
+  color: var(--muted-foreground);
+}
