@@ -35,14 +35,6 @@ npm run dev
 
 La aplicación queda disponible en http://localhost:5173.
 
-La pantalla de inicio de sesión permite previsualizar sus variantes con el parámetro `estado`:
-
-- http://localhost:5173/?estado=error — error de acceso
-- http://localhost:5173/?estado=bloqueada — cuenta bloqueada
-- http://localhost:5173/?estado=inactividad — sesión cerrada por inactividad
-
-El formulario todavía no está conectado a un servicio de autenticación.
-
 ## Scripts disponibles
 
 | Comando | Descripción |
@@ -51,17 +43,6 @@ El formulario todavía no está conectado a un servicio de autenticación.
 | `npm run build` | Verifica los tipos y genera la versión de producción en `dist/` |
 | `npm run preview` | Sirve localmente la versión generada por `build` |
 | `npm run lint` | Ejecuta Oxlint sobre el código |
-
-## Estructura
-
-```
-src/
-├── assets/icons/     Íconos SVG exportados de Figma
-├── components/       Componentes base (AuthLayout, TextField, Button, Alert)
-├── features/auth/    Pantallas de autenticación (LoginPage)
-├── App.tsx
-└── index.css         Tokens de diseño como variables CSS
-```
 
 ## Convención de ramas y commits
 
