@@ -1,32 +1,68 @@
-# React + TypeScript + Vite
+# DentalCare · Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicación web del proyecto de odontología, construida con React 19, TypeScript y Vite.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20.19 o superior (o 22.12+)
+- npm 10 o superior
+- Git
 
-## React Compiler
+## Clonar el repositorio
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+git clone git@github.com:kuroxbyte/odonto-dci-frontend.git
+cd odonto-dci-frontend
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Si no tienes configurada una llave SSH, puedes clonar por HTTPS:
+
+```bash
+git clone https://github.com/kuroxbyte/odonto-dci-frontend.git
+```
+
+## Instalar dependencias
+
+```bash
+npm install
+```
+
+## Ejecutar en local
+
+```bash
+npm run dev
+```
+
+La aplicación queda disponible en http://localhost:5173.
+
+La pantalla de inicio de sesión permite previsualizar sus variantes con el parámetro `estado`:
+
+- http://localhost:5173/?estado=error — error de acceso
+- http://localhost:5173/?estado=bloqueada — cuenta bloqueada
+- http://localhost:5173/?estado=inactividad — sesión cerrada por inactividad
+
+El formulario todavía no está conectado a un servicio de autenticación.
+
+## Scripts disponibles
+
+| Comando | Descripción |
+| --- | --- |
+| `npm run dev` | Inicia el servidor de desarrollo con recarga en caliente |
+| `npm run build` | Verifica los tipos y genera la versión de producción en `dist/` |
+| `npm run preview` | Sirve localmente la versión generada por `build` |
+| `npm run lint` | Ejecuta Oxlint sobre el código |
+
+## Estructura
+
+```
+src/
+├── assets/icons/     Íconos SVG exportados de Figma
+├── components/       Componentes base (AuthLayout, TextField, Button, Alert)
+├── features/auth/    Pantallas de autenticación (LoginPage)
+├── App.tsx
+└── index.css         Tokens de diseño como variables CSS
+```
+
+## Convención de ramas y commits
+
+Las ramas y los commits llevan el código del ticket, por ejemplo `feature/DCI-5-login` y `feature(DCI-5): implementa pantalla de inicio de sesión`.
