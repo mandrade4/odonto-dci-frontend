@@ -41,8 +41,6 @@ function App() {
 
   if (showLayoutPreview || loggedIn)
     return <AppLayout activeKey={section} onNavigate={setSection} />
-
-  if (loggedIn) return <AppLayout activeKey={section} onNavigate={setSection}/>;
   
   return <LoginPage notice={noticeFromQuery()} onSubmit={handleLogin}/>
 }
