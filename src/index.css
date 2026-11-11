@@ -19,6 +19,18 @@
   --shadow-xs: 0 1px 2px #0000000d;
 
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Tokens del diseño de Figma usados en el Sidebar */
+  --sidebar-background: #0b2e33;
+  --sidebar-accent: #134a51;
+
+  --sidebar-highlight: #5fd3dc;
+  --sidebar-logo: #0e7c86;
+  
+  --sidebar-text-muted: #8fb3b7;
+  --sidebar-text-inactive: #b5ced1;
+
+  --app-background: #f5f7fa; 
 }
 
 *,
