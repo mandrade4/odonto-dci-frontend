@@ -35,8 +35,12 @@ function App() {
     if (response.ok) setLoggedIn(true);
   }
   
-  if (new URLSearchParams(window.location.search).get('vista') === 'layout') 
-    return <AppLayout activeKey={section} onNavigate={setSection}/>
+  const showLayoutPreview =
+    import.meta.env.DEV &&
+    new URLSearchParams(window.location.search).get('vista') === 'layout'
+
+  if (showLayoutPreview || loggedIn)
+    return <AppLayout activeKey={section} onNavigate={setSection} />
 
   if (loggedIn) return <AppLayout activeKey={section} onNavigate={setSection}/>;
   
