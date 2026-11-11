@@ -1,5 +1,7 @@
 import { LoginPage, type LoginNotice } from './features/auth/LoginPage'
 import { useState } from 'react'
+import { AppLayout } from './components/AppLayout/AppLayout'
+import type { NavKey } from './components/Sidebar/navItems'
 
 // Vista previa de las variantes del diseño: /?estado=error|bloqueada|inactividad
 function noticeFromQuery(): LoginNotice | undefined {
@@ -18,6 +20,8 @@ function noticeFromQuery(): LoginNotice | undefined {
 function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
+  
+  const [section, setSection] = useState<NavKey>('inicio');
 
   async function handleLogin(datos: { email: string; password: string }){
     const response = await fetch(
@@ -30,8 +34,13 @@ function App() {
     );
     if (response.ok) setLoggedIn(true);
   }
+  
+  const showLayoutPreview =
+    import.meta.env.DEV &&
+    new URLSearchParams(window.location.search).get('vista') === 'layout'
 
-  if (loggedIn) return <h1>Logueados!</h1>;
+  if (showLayoutPreview || loggedIn)
+    return <AppLayout activeKey={section} onNavigate={setSection} />
   
   return <LoginPage notice={noticeFromQuery()} onSubmit={handleLogin}/>
 }
