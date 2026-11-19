@@ -1,0 +1,56 @@
+:root {
+  /* Tokens tomados del diseño de Figma (Draft-Odontologia) */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted-foreground: #737373;
+  --primary: #0f766e;
+  --primary-foreground: #ffffff;
+  --input: #e5e5e5;
+  --border: #e5e5e5;
+  --destructive: #dc2626;
+  --destructive-soft: #fef2f2;
+  --destructive-soft-foreground: #991b1b;
+  --primary-soft: #f0fdfa;
+  --success-soft: #f0fdf4;
+  --brand-panel: #0b2e33;
+  --info: #2563eb;
+  --info-soft: #eff6ff;
+  --info-soft-foreground: #1e40af;
+
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --shadow-xs: 0 1px 2px #0000000d;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Tokens del diseño de Figma usados en el Sidebar */
+  --sidebar-background: #0b2e33;
+  --sidebar-accent: #134a51;
+
+  --sidebar-highlight: #5fd3dc;
+  --sidebar-logo: #0e7c86;
+  
+  --sidebar-text-muted: #8fb3b7;
+  --sidebar-text-inactive: #b5ced1;
+
+  --app-background: #f5f7fa; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
