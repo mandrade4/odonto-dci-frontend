@@ -50,14 +50,14 @@ React Router (modo declarativo, `BrowserRouter`). La app vive bajo `import.meta.
 | `/restablecer?token=` | Crear contraseña nueva | libre; sin token va a `/enlace-no-valido` |
 | `/activar?token=` | Activar cuenta (invitación) | libre; sin token va a `/enlace-no-valido` |
 | `/enlace-no-valido`, `/contrasena-actualizada` | Estados | libre |
-| `/inicio`, `/agenda`, `/pacientes`, `/historia-clinica`, `/presupuestos`, `/caja`, `/reportes` | Secciones internas | requiere sesión |
+| `/inicio`, `/agenda`, `/historia-clinica`, `/caja`, `/reportes` | Secciones internas | requiere sesión |
 
 - Sin sesión, una ruta interna redirige a `/login` y recuerda a dónde iba; tras iniciar sesión se vuelve ahí.
 - Con sesión, `/login` y la recuperación redirigen a `/inicio`. Cualquier ruta desconocida también.
 - Las rutas internas se definen una vez, en `NAV_ITEMS` (`shared/layouts/Sidebar/navItems.ts`). El sidebar y la tabla de rutas leen de ahí.
 - Una pantalla de `features/` no navega por sí misma: recibe callbacks y `app/authRoutes.tsx` los conecta con el router.
 
-**GitHub Pages:** no conoce las rutas de la SPA y respondería 404 al recargar `/pacientes`. El workflow de despliegue copia `index.html` a `404.html`, así Pages sirve la app también en ese caso (con estado 404, pero funciona). Si el hosting cambia, esto deja de hacer falta.
+**GitHub Pages:** no conoce las rutas de la SPA y respondería 404 al recargar `/inicio`. El workflow de despliegue copia `index.html` a `404.html`, así Pages sirve la app también en ese caso (con estado 404, pero funciona). Si el hosting cambia, esto deja de hacer falta.
 
 ## Configuración
 

@@ -21,7 +21,6 @@ export function Sidebar({ user, onLogout }: SidebarProps) {
             <span className={styles.logo}>D</span>
             <div className={styles.brandText}>
                 <span className={styles.brandName}>DentaPerú</span>
-                <span className={styles.brandBranch}>Sede Miraflores</span>
             </div>
         </div>
 
