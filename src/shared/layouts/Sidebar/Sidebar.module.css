@@ -29,16 +29,10 @@
   font-weight: 700;
 }
 
-.brandText {
-  display: flex;
-  flex-direction: column;
-}
-
 .brandName {
   font-size: 16px;
   font-weight: 700;
 }
-
 
 /* ===== Menú ===== */
 
@@ -59,7 +53,6 @@
 
 .navItem {
   display: flex;
-  position: relative;
   align-items: center;
   gap: 12px;
   width: 100%;
@@ -138,17 +131,6 @@
   font-weight: 700;
 }
 
-.navItemActive::before {
-  content: '';
-  position: absolute;
-  top: 9px;
-  bottom: 9px;
-  left: 0;
-  width: 3px;
-  border-radius: 2px;
-  background: var(--sidebar-highlight);
-}
-
 /* Ícono SVG */
 .navIcon {
   flex-shrink: 0;
@@ -163,6 +145,7 @@
 .navItemActive .navIcon {
   background-color: var(--sidebar-highlight);
 }
+
 .logout {
   padding: 4px 8px;
   border: 1px solid var(--sidebar-text-muted);
