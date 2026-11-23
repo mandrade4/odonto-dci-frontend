@@ -13,8 +13,11 @@ import { PublicOnly, RequireAuth } from './guards'
 import { PATHS } from './paths'
 import { ProtectedLayout } from './ProtectedLayout'
 import { SectionPage } from './SectionPage'
+import { useTitle } from './useTitle'
 
 export function AppRoutes() {
+  useTitle()
+
   return (
     <Routes>
       {/* Acceso: solo sin sesión */}
