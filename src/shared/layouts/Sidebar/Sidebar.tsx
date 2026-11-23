@@ -19,10 +19,7 @@ export function Sidebar({ user, onLogout }: SidebarProps) {
 
         <div className={styles.brand}>
             <span className={styles.logo}>D</span>
-            <div className={styles.brandText}>
-                <span className={styles.brandName}>DentaPerú</span>
-                <span className={styles.brandBranch}>Sede Miraflores</span>
-            </div>
+            <span className={styles.brandName}>DentaPerú</span>
         </div>
 
         <nav className={styles.nav} aria-label="Navegación principal">
